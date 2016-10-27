@@ -32,3 +32,8 @@ filler
 # Debug files
 *.dSYM/
 *.su
+
+.*.sw*
+._*
+.nfs*
+lfabbro.filler
