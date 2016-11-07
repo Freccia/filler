@@ -1,3 +1,4 @@
 #!/bin/bash
+rm filler.log filler.trace
 make -C .. re
-cp ../lfabbro.filler players
+mv ../lfabbro.filler players

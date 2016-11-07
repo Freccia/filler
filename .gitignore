@@ -37,3 +37,5 @@ filler
 ._*
 .nfs*
 lfabbro.filler
+filler.trace
+filler.log

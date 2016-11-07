@@ -6,12 +6,13 @@
 #    By: lfabbro <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/04/07 18:07:52 by lfabbro           #+#    #+#              #
-#    Updated: 2016/10/27 16:21:32 by lfabbro          ###   ########.fr        #
+#    Updated: 2016/11/06 23:26:11 by lfabbro          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = lfabbro.filler
-SRC_NAME = main.c
+SRC_NAME = main.c ft_get.c ft_place.c ft_tools.c\
+		   ft_log.c
 
 OBJ_NAME = $(SRC_NAME:.c=.o)
 LIB_NAMES = ft
@@ -51,7 +52,7 @@ $(NAME):
 clean : libclean
 	@/bin/rm -fv $(OBJ)
 
-fclean : libfclean clean
+fclean : clean #libfclean clean
 	@/bin/rm -fv $(NAME)
 
 libre :
