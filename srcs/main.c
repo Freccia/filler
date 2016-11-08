@@ -6,7 +6,7 @@
 /*   By: lfabbro <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/27 15:45:46 by lfabbro           #+#    #+#             */
-/*   Updated: 2016/11/07 17:59:31 by lfabbro          ###   ########.fr       */
+/*   Updated: 2016/11/09 00:26:05 by lfabbro          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,8 @@ int				main(void)
 
 	ft_set_point(&e.m, 0, 0);
 	ft_set_point(&e.p, 0, 0);
+	ft_set_point(&e.last, -1, -1);
+	e.reach_bot = 0;
 	ft_player(&e, line);
 	while (get_next_line(0, &line) > 0)
 	{

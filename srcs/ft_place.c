@@ -6,7 +6,7 @@
 /*   By: lfabbro <lfabbro@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/06 21:42:25 by lfabbro           #+#    #+#             */
-/*   Updated: 2016/11/08 11:25:44 by lfabbro          ###   ########.fr       */
+/*   Updated: 2016/11/09 00:26:08 by lfabbro          ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -53,7 +53,6 @@ int		ft_can_fit(t_env *e, char map[e->m.y][e->m.x], char pic[e->p.y][e->p.x],
 							map[pm.y][pm.x] == (e->player + 32))
 					{
 						++np;
-						//ft_log2(e, map, pic, pp, pm, c);
 					}
 				}
 				else
@@ -104,10 +103,6 @@ int		ft_nearer(t_env *e, char map[e->m.y][e->m.x], char pic[e->p.y][e->p.x],
 		{
 			if (map[j.y][j.x] == e->adv || map[j.y][j.x] == (e->adv + 32))
 			{
-
-				ft_log_point(e, j, "ADV:      ");
-
-				//ft_set_point(&j, 0, 0);
 				return (ft_distance(e, pic, j, c));
 			}
 		}
@@ -122,11 +117,8 @@ void	ft_place(t_env *e, char map[e->m.y][e->m.x], char pic[e->p.y][e->p.x])
 	int		this;
 
 	//ft_sleep(1);
-	ft_log(e);
-	ft_log_piece(e, pic, "Piece copy:");
-	ft_log_map(e, map, "Map copy:");
-
 	best = 1999999999;
+	ft_set_point(&e->best, -1, -1);
 	c.y = -e->p.y;
 	while (++c.y < e->m.y)
 	{
@@ -135,17 +127,21 @@ void	ft_place(t_env *e, char map[e->m.y][e->m.x], char pic[e->p.y][e->p.x])
 		{
 			if (ft_can_fit(e, map, pic, c))
 			{
-				ft_log_point(e, c, "CAN FIT: ");
-				if ((this = ft_nearer(e, map, pic, c)) < best)
+				if (e->reach_bot && (this = ft_nearer(e, map, pic, c)) < best)
 				{
 					best = this;
 					ft_set_point(&e->best, c.y, c.x);
 				}
+				else if (c.y > e->best.y && c.x > e->best.x)
+					ft_set_point(&e->best, c.y, c.x);
 			}
 		}
 	}
-
-	ft_log_best(e);
-
+	ft_set_point(&e->last, e->best.y + e->p.y, e->best.x + e->p.x);
+	if (e->last.y >= e->m.y)
+	{
+		e->reach_bot = 1;
+		ft_putendl_fd("SWAP ALGO", e->fd);
+	}
 	ft_print_best(e->best);
 }

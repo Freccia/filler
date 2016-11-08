@@ -6,7 +6,7 @@
 /*   By: lfabbro <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/27 15:44:32 by lfabbro           #+#    #+#             */
-/*   Updated: 2016/11/08 11:39:37 by lfabbro          ###   ########.fr       */
+/*   Updated: 2016/11/09 00:26:02 by lfabbro          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,8 @@ typedef struct		s_env
 	t_point			m;		// map size
 	t_point			p;		// piece size
 	t_point			best;	// best moove
+	t_point			last;	// best moove
+	int				reach_bot;
 	int				fd;
 }					t_env;
 
