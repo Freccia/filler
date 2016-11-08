@@ -6,7 +6,7 @@
 /*   By: lfabbro <lfabbro@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/06 23:17:10 by lfabbro           #+#    #+#             */
-/*   Updated: 2016/11/07 17:59:28 by lfabbro          ###   ########.fr       */
+/*   Updated: 2016/11/08 11:28:23 by lfabbro          ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -43,11 +43,16 @@ void	ft_log_map(t_env *e, char map[e->m.y][e->m.x], char *str)
 {
 	int		y = -1;
 	int		x;
+	int		k;
 
 	ft_putendl_fd(str, e->fd);
 	while (++y < e->m.y)
 	{
 		x = -1;
+		ft_putnbr_fd(y, e->fd);
+		k = 4 - ft_nbrlen_base(y, 10);
+		while (k--)
+			ft_putchar_fd(' ', e->fd);
 		while (++x < e->m.x)
 		{
 			ft_putchar_fd(map[y][x], e->fd);

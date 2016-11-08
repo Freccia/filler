@@ -6,7 +6,7 @@
 /*   By: lfabbro <lfabbro@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/06 21:42:25 by lfabbro           #+#    #+#             */
-/*   Updated: 2016/11/07 17:59:38 by lfabbro          ###   ########.fr       */
+/*   Updated: 2016/11/08 11:25:44 by lfabbro          ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -68,20 +68,10 @@ int		ft_can_fit(t_env *e, char map[e->m.y][e->m.x], char pic[e->p.y][e->p.x],
 
 int		ft_distance(t_env *e, char pic[e->p.y][e->p.x], t_point j, t_point c)
 {
-	/*
-	double	x;
-	double	y;
-
-	y = fabs((double)(j.y - c.y));
-	y = y * y;
-	x = fabs((double)(j.x - c.x));
-	x = x * x;
-	return ((int)(sqrt(x + y)));
-	*/
 	int		y = -1;
 	int		x;
-	int		dist = 0;;
-	int	z, k;
+	int		dist = 0;
+	int		z, k;
 
 	while (++y < e->p.y)
 	{
@@ -90,9 +80,9 @@ int		ft_distance(t_env *e, char pic[e->p.y][e->p.x], t_point j, t_point c)
 		{
 			if (pic[y][x] == '*')
 			{
-				z = ft_abs(j.y - c.y + y);
-				k = ft_abs(j.x - c.x + x);
-				dist += (z + k);
+				z = ft_abs(j.y - c.y);
+				k = ft_abs(j.x - c.x);
+				return (dist += (z + k));
 			}
 		}
 	}
@@ -117,6 +107,7 @@ int		ft_nearer(t_env *e, char map[e->m.y][e->m.x], char pic[e->p.y][e->p.x],
 
 				ft_log_point(e, j, "ADV:      ");
 
+				//ft_set_point(&j, 0, 0);
 				return (ft_distance(e, pic, j, c));
 			}
 		}
@@ -131,14 +122,12 @@ void	ft_place(t_env *e, char map[e->m.y][e->m.x], char pic[e->p.y][e->p.x])
 	int		this;
 
 	//ft_sleep(1);
-
-	best = 1999999999;
-	c.y = -e->p.y;
-
 	ft_log(e);
 	ft_log_piece(e, pic, "Piece copy:");
 	ft_log_map(e, map, "Map copy:");
 
+	best = 1999999999;
+	c.y = -e->p.y;
 	while (++c.y < e->m.y)
 	{
 		c.x = -e->p.x;
@@ -146,8 +135,12 @@ void	ft_place(t_env *e, char map[e->m.y][e->m.x], char pic[e->p.y][e->p.x])
 		{
 			if (ft_can_fit(e, map, pic, c))
 			{
+				ft_log_point(e, c, "CAN FIT: ");
 				if ((this = ft_nearer(e, map, pic, c)) < best)
+				{
+					best = this;
 					ft_set_point(&e->best, c.y, c.x);
+				}
 			}
 		}
 	}

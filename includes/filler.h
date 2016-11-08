@@ -6,7 +6,7 @@
 /*   By: lfabbro <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/27 15:44:32 by lfabbro           #+#    #+#             */
-/*   Updated: 2016/11/07 17:59:39 by lfabbro          ###   ########.fr       */
+/*   Updated: 2016/11/08 11:39:37 by lfabbro          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,10 @@ typedef struct		s_env
 {
 	char			player;
 	char			adv;
+	int				algo;
 	t_point			m;		// map size
 	t_point			p;		// piece size
-	t_point			best;
+	t_point			best;	// best moove
 	int				fd;
 }					t_env;
 
@@ -41,6 +42,10 @@ void				ft_get_size(t_point *p, char *line);
 void				ft_get_map(t_env *e);
 void				ft_place(t_env *e, char map[e->m.y][e->m.x],\
 		char pic[e->p.y][e->p.x]);
+//int     			ft_algo_top(t_env *e, char map[e->m.y][e->m.x], \
+//		char pic[e->p.y][e->p.x], t_point c);
+//int     			ft_algo_bot(t_env *e, char map[e->m.y][e->m.x], \
+//		char pic[e->p.y][e->p.x], t_point c);
 void				ft_print_best(t_point best);
 
 /*
