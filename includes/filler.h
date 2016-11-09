@@ -6,7 +6,7 @@
 /*   By: lfabbro <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/27 15:44:32 by lfabbro           #+#    #+#             */
-/*   Updated: 2016/11/09 00:26:02 by lfabbro          ###   ########.fr       */
+/*   Updated: 2016/11/09 16:33:02 by lfabbro          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,6 @@
 # include "libft.h"
 # include <stdio.h>
 # include <stdlib.h>
-# include <fcntl.h>
-
-#include <math.h>
 
 typedef struct		s_point
 {
@@ -30,12 +27,10 @@ typedef struct		s_env
 {
 	char			player;
 	char			adv;
-	int				algo;
-	t_point			m;		// map size
-	t_point			p;		// piece size
-	t_point			best;	// best moove
-	t_point			last;	// best moove
-	int				reach_bot;
+	int				np;
+	t_point			m;
+	t_point			p;
+	t_point			best;
 	int				fd;
 }					t_env;
 
@@ -44,21 +39,6 @@ void				ft_get_size(t_point *p, char *line);
 void				ft_get_map(t_env *e);
 void				ft_place(t_env *e, char map[e->m.y][e->m.x],\
 		char pic[e->p.y][e->p.x]);
-//int     			ft_algo_top(t_env *e, char map[e->m.y][e->m.x], \
-//		char pic[e->p.y][e->p.x], t_point c);
-//int     			ft_algo_bot(t_env *e, char map[e->m.y][e->m.x], \
-//		char pic[e->p.y][e->p.x], t_point c);
 void				ft_print_best(t_point best);
-
-/*
-**		LOG
-*/
-void	ft_log(t_env *e);
-void	ft_log2(t_env *e, char map[e->m.y][e->m.x], \
-			char pic[e->m.y][e->m.x], t_point pp, t_point pm, t_point c);
-void	ft_log_piece(t_env *e, char pic[e->p.y][e->p.x], char *str);
-void	ft_log_map(t_env *e, char map[e->m.y][e->m.x], char *str);
-void    ft_log_point(t_env *e, t_point p, char *str);
-void	ft_log_best(t_env *e);
 
 #endif
