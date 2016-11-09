@@ -1,14 +1,14 @@
-/******************************************************************************/
+/* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   ft_get.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lfabbro <lfabbro@student.42.fr>            +#+  +:+       +#+        */
+/*   By: lfabbro <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/06 21:31:58 by lfabbro           #+#    #+#             */
-/*   Updated: 2016/11/08 11:32:16 by lfabbro          ###   ########.fr       */
+/*   Created: 2016/11/09 15:43:46 by lfabbro           #+#    #+#             */
+/*   Updated: 2016/11/09 16:32:55 by lfabbro          ###   ########.fr       */
 /*                                                                            */
-/******************************************************************************/
+/* ************************************************************************** */
 
 #include "filler.h"
 
@@ -35,10 +35,11 @@ static void		ft_get_algo(t_env *e, char map[e->m.y][e->m.x])
 static void		ft_get_piece(t_env *e, char map[e->m.y][e->m.x])
 {
 	char		pic[e->p.y][e->p.x];
-	char		*line = NULL;
+	char		*line;
 	int			y;
 	int			x;
 
+	line = NULL;
 	y = -1;
 	while (++y < e->p.y)
 	{
@@ -58,10 +59,11 @@ static void		ft_get_piece(t_env *e, char map[e->m.y][e->m.x])
 void			ft_get_map(t_env *e)
 {
 	char		map[e->m.y][e->m.x];
-	char		*line = NULL;
+	char		*line;
 	int			y;
 	int			x;
 
+	line = NULL;
 	y = -1;
 	while (++y < e->m.y)
 	{
