@@ -6,7 +6,7 @@
 #    By: lfabbro <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/04/07 18:07:52 by lfabbro           #+#    #+#              #
-#    Updated: 2016/11/09 16:38:40 by lfabbro          ###   ########.fr        #
+#    Updated: 2016/11/09 23:07:52 by lfabbro          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,8 +18,8 @@ LIB_NAMES = ft
 
 SRC_PATH = ./srcs/
 OBJ_PATH = ./objs/
-INC_PATH = ./includes/ ./libft/includes
-LIB_PATH = ./libft/
+INC_PATH = ./includes/ ./libft/includes/ ./SDL2/include
+LIB_PATH = ./libft/ 
 
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
@@ -36,6 +36,10 @@ INC = $(addprefix -I,$(INC_PATH))
 ## LIBRARIES ##
 LIB_LINK = $(addprefix -L,$(LIB_PATH))
 LIB = $(addprefix -l,$(LIB_NAMES))
+SDL = -L ./libsdl/lib/ -lSDL2
+
+## FRAMEWORKS ##
+FRAMEW = -framework OpenGL
 
 .PHONY: all clean fclean re norme
 
@@ -46,7 +50,11 @@ all:
 	@make $(NAME)
 
 $(NAME):
-	$(CC) $(CFLAGS) $(INC) $(LIB_LINK) $(LIB) $(SRC) -o $(NAME)
+	$(CC) $(CFLAGS) $(INC) $(LIB_LINK) $(LIB) $(SDL) $(SRC) -o $(NAME) $(FRAMEW)
+
+sdl:
+	@echo "\x1b[44m\x1b[32mMaking SDL2\x1b[0m\x1b[0m"
+	./scripts/build_sdl.sh
 
 clean : libclean
 	@/bin/rm -fv $(OBJ)

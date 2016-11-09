@@ -6,31 +6,11 @@
 /*   By: lfabbro <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/09 15:43:46 by lfabbro           #+#    #+#             */
-/*   Updated: 2016/11/09 16:32:55 by lfabbro          ###   ########.fr       */
+/*   Updated: 2016/11/09 20:43:26 by lfabbro          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "filler.h"
-
-static void		ft_get_algo(t_env *e, char map[e->m.y][e->m.x])
-{
-	int			y;
-	int			x;
-
-	y = -1;
-	while (++y < e->m.y)
-	{
-		x = -1;
-		while (++x < e->m.x)
-		{
-			if (map[y][x] != '.')
-			{
-				e->algo = (map[y][x] == e->player) ? 1 : 2;
-				return ;
-			}
-		}
-	}
-}
 
 static void		ft_get_piece(t_env *e, char map[e->m.y][e->m.x])
 {
@@ -51,8 +31,6 @@ static void		ft_get_piece(t_env *e, char map[e->m.y][e->m.x])
 		}
 		free(line);
 	}
-	if (!e->algo)
-		ft_get_algo(e, map);
 	ft_place(e, map, pic);
 }
 

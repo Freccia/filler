@@ -1,0 +1,22 @@
+build/SDL_timer.lo: \
+  /Users/lfabbro/Cursus/filler/SDL2/src/timer/SDL_timer.c \
+  /Users/lfabbro/Cursus/filler/SDL2/src/timer/../SDL_internal.h \
+  /Users/lfabbro/Cursus/filler/SDL2/src/timer/../dynapi/SDL_dynapi.h \
+  /Users/lfabbro/Cursus/filler/SDL2/src/timer/../dynapi/SDL_dynapi_overrides.h \
+  include/SDL_config.h \
+  /Users/lfabbro/Cursus/filler/SDL2/include/SDL_platform.h \
+  /Users/lfabbro/Cursus/filler/SDL2/include/begin_code.h \
+  /Users/lfabbro/Cursus/filler/SDL2/include/close_code.h \
+  /Users/lfabbro/Cursus/filler/SDL2/include/SDL_timer.h \
+  /Users/lfabbro/Cursus/filler/SDL2/include/SDL_stdinc.h \
+  /Users/lfabbro/Cursus/filler/SDL2/include/SDL_config.h \
+  /Users/lfabbro/Cursus/filler/SDL2/include/SDL_error.h \
+  /Users/lfabbro/Cursus/filler/SDL2/src/timer/SDL_timer_c.h \
+  /Users/lfabbro/Cursus/filler/SDL2/include/SDL_atomic.h \
+  /Users/lfabbro/Cursus/filler/SDL2/include/SDL_cpuinfo.h \
+  /Users/lfabbro/Cursus/filler/SDL2/src/timer/../thread/SDL_systhread.h \
+  /Users/lfabbro/Cursus/filler/SDL2/include/SDL_thread.h \
+  /Users/lfabbro/Cursus/filler/SDL2/include/SDL_mutex.h \
+  /Users/lfabbro/Cursus/filler/SDL2/src/timer/../thread/SDL_thread_c.h \
+  /Users/lfabbro/Cursus/filler/SDL2/src/timer/../thread/pthread/SDL_systhread_c.h \
+  /Users/lfabbro/Cursus/filler/SDL2/src/timer/../thread/../SDL_error_c.h

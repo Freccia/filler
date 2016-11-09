@@ -1,0 +1,28 @@
+build/SDL_RLEaccel.lo: \
+  /Users/lfabbro/Cursus/filler/SDL2/src/video/SDL_RLEaccel.c \
+  /Users/lfabbro/Cursus/filler/SDL2/src/video/../SDL_internal.h \
+  /Users/lfabbro/Cursus/filler/SDL2/src/video/../dynapi/SDL_dynapi.h \
+  /Users/lfabbro/Cursus/filler/SDL2/src/video/../dynapi/SDL_dynapi_overrides.h \
+  include/SDL_config.h \
+  /Users/lfabbro/Cursus/filler/SDL2/include/SDL_platform.h \
+  /Users/lfabbro/Cursus/filler/SDL2/include/begin_code.h \
+  /Users/lfabbro/Cursus/filler/SDL2/include/close_code.h \
+  /Users/lfabbro/Cursus/filler/SDL2/include/SDL_video.h \
+  /Users/lfabbro/Cursus/filler/SDL2/include/SDL_stdinc.h \
+  /Users/lfabbro/Cursus/filler/SDL2/include/SDL_config.h \
+  /Users/lfabbro/Cursus/filler/SDL2/include/SDL_pixels.h \
+  /Users/lfabbro/Cursus/filler/SDL2/include/SDL_endian.h \
+  /Users/lfabbro/Cursus/filler/SDL2/include/SDL_rect.h \
+  /Users/lfabbro/Cursus/filler/SDL2/include/SDL_error.h \
+  /Users/lfabbro/Cursus/filler/SDL2/include/SDL_rwops.h \
+  /Users/lfabbro/Cursus/filler/SDL2/include/SDL_surface.h \
+  /Users/lfabbro/Cursus/filler/SDL2/include/SDL_blendmode.h \
+  /Users/lfabbro/Cursus/filler/SDL2/src/video/SDL_sysvideo.h \
+  /Users/lfabbro/Cursus/filler/SDL2/include/SDL_messagebox.h \
+  /Users/lfabbro/Cursus/filler/SDL2/include/SDL_shape.h \
+  /Users/lfabbro/Cursus/filler/SDL2/include/SDL_thread.h \
+  /Users/lfabbro/Cursus/filler/SDL2/include/SDL_atomic.h \
+  /Users/lfabbro/Cursus/filler/SDL2/include/SDL_mutex.h \
+  /Users/lfabbro/Cursus/filler/SDL2/src/video/SDL_blit.h \
+  /Users/lfabbro/Cursus/filler/SDL2/include/SDL_cpuinfo.h \
+  /Users/lfabbro/Cursus/filler/SDL2/src/video/SDL_RLEaccel_c.h
