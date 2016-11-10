@@ -6,7 +6,7 @@
 /*   By: lfabbro <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/27 15:44:32 by lfabbro           #+#    #+#             */
-/*   Updated: 2016/11/10 00:28:28 by lfabbro          ###   ########.fr       */
+/*   Updated: 2016/11/10 13:22:46 by lfabbro          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ typedef struct		s_sdl
 	SDL_Window		*win;
 	SDL_Surface		*surf;
 	SDL_Event		event;
+	SDL_Renderer	*rend;
 }					t_sdl;
 
 typedef struct		s_point
@@ -46,6 +47,10 @@ void				ft_get_map(t_env *e);
 void				ft_place(t_env *e, char map[e->m.y][e->m.x],\
 		char pic[e->p.y][e->p.x]);
 void				ft_print_best(t_point best);
-int					ft_mlx_init(t_env *e);
+
+/*
+**		SDL
+*/
+void            sdl_draw_grid(t_env *e, t_sdl *sdl);
 
 #endif
