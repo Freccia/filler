@@ -1,6 +1,6 @@
 # sdl pkg-config source file
 
-prefix=/Users/freccia/Coding/Projects/filler/SDL2/builD
+prefix=/Users/lfabbro/Cursus/filler/libsdl
 exec_prefix=${prefix}
 libdir=${exec_prefix}/lib
 includedir=${prefix}/include

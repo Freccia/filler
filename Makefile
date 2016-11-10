@@ -6,12 +6,12 @@
 #    By: lfabbro <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/04/07 18:07:52 by lfabbro           #+#    #+#              #
-#    Updated: 2016/11/09 23:07:52 by lfabbro          ###   ########.fr        #
+#    Updated: 2016/11/10 17:26:45 by lfabbro          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = lfabbro.filler
-SRC_NAME = main.c ft_get.c ft_place.c ft_tools.c
+SRC_NAME = main.c ft_get.c ft_place.c ft_tools.c ft_graphic.c ft_sdl.c
 
 OBJ_NAME = $(SRC_NAME:.c=.o)
 LIB_NAMES = ft

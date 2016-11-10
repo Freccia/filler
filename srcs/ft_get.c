@@ -6,7 +6,7 @@
 /*   By: lfabbro <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/09 15:43:46 by lfabbro           #+#    #+#             */
-/*   Updated: 2016/11/10 13:22:48 by lfabbro          ###   ########.fr       */
+/*   Updated: 2016/11/10 17:23:26 by lfabbro          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ static void		ft_get_piece(t_env *e, char map[e->m.y][e->m.x])
 		}
 		free(line);
 	}
+	sdl_update_grid(e, &e->sdl, map);
 	ft_place(e, map, pic);
 }
 

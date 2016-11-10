@@ -6,7 +6,7 @@
 /*   By: lfabbro <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/27 15:44:32 by lfabbro           #+#    #+#             */
-/*   Updated: 2016/11/10 13:22:46 by lfabbro          ###   ########.fr       */
+/*   Updated: 2016/11/10 17:37:22 by lfabbro          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,11 @@
 # include "libft.h"
 #include "SDL.h"
 
+# define GRID		10
+
 typedef struct		s_sdl
 {
 	SDL_Window		*win;
-	SDL_Surface		*surf;
 	SDL_Event		event;
 	SDL_Renderer	*rend;
 }					t_sdl;
@@ -51,6 +52,9 @@ void				ft_print_best(t_point best);
 /*
 **		SDL
 */
+int             sdl_init(t_sdl *sdl);
+void			sdl_event(t_sdl *sdl);
 void            sdl_draw_grid(t_env *e, t_sdl *sdl);
+void			sdl_update_grid(t_env *e, t_sdl *sdl, char map[e->m.y][e->m.x]);
 
 #endif

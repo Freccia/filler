@@ -1,6 +1,6 @@
 #!/bin/sh
 
-prefix=/Users/freccia/Coding/Projects/filler/SDL2/builD
+prefix=/Users/lfabbro/Cursus/filler/libsdl
 exec_prefix=${prefix}
 exec_prefix_set=no
 libdir=${exec_prefix}/lib
