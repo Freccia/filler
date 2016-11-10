@@ -6,7 +6,7 @@
 /*   By: lfabbro <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/10 17:23:20 by lfabbro           #+#    #+#             */
-/*   Updated: 2016/11/10 18:59:49 by lfabbro          ###   ########.fr       */
+/*   Updated: 2016/11/10 20:03:13 by lfabbro          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@ void			sdl_quit(t_sdl *sdl)
 	SDL_DestroyRenderer(sdl->rend);
 	SDL_DestroyWindow(sdl->win);
 	SDL_Quit();
-	while (1)
-		;
 	exit(0);
 }
 
