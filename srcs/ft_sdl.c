@@ -6,7 +6,7 @@
 /*   By: lfabbro <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/10 17:23:20 by lfabbro           #+#    #+#             */
-/*   Updated: 2016/11/10 17:37:21 by lfabbro          ###   ########.fr       */
+/*   Updated: 2016/11/10 18:59:49 by lfabbro          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,8 @@ void			sdl_quit(t_sdl *sdl)
 	SDL_DestroyRenderer(sdl->rend);
 	SDL_DestroyWindow(sdl->win);
 	SDL_Quit();
-	while (1);
+	while (1)
+		;
 	exit(0);
 }
 
@@ -33,7 +34,7 @@ void			sdl_event(t_sdl *sdl)
 		sdl_quit(sdl);
 }
 
-void	sdl_clear(t_sdl *sdl)
+void			sdl_clear(t_sdl *sdl)
 {
 	SDL_SetRenderDrawColor(sdl->rend, 0, 0, 0, 0);
 	SDL_RenderClear(sdl->rend);

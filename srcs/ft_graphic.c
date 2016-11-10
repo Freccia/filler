@@ -6,13 +6,13 @@
 /*   By: lfabbro <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/10 17:26:32 by lfabbro           #+#    #+#             */
-/*   Updated: 2016/11/10 17:34:33 by lfabbro          ###   ########.fr       */
+/*   Updated: 2016/11/10 18:51:33 by lfabbro          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "filler.h"
 
-void			sdl_draw_grid(t_env *e, t_sdl *sdl)
+void		sdl_draw_grid(t_env *e, t_sdl *sdl)
 {
 	int		x;
 	int		y;
@@ -54,9 +54,9 @@ void		sdl_update_grid(t_env *e, t_sdl *sdl, char map[e->m.y][e->m.x])
 		{
 			if (map[y][x] != '.')
 			{
-				if (map[y][x] == e->player || map[y][x] == e->player + 32) 
+				if (map[y][x] == e->player || map[y][x] == e->player + 32)
 					SDL_SetRenderDrawColor(sdl->rend, 20, 200, 200, 255);
-				if (map[y][x] == e->adv || map[y][x] == e->adv + 32) 
+				if (map[y][x] == e->adv || map[y][x] == e->adv + 32)
 					SDL_SetRenderDrawColor(sdl->rend, 200, 20, 200, 255);
 				sdl_set_rect(&rect, x, y);
 				SDL_RenderDrawRect(sdl->rend, &rect);

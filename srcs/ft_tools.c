@@ -6,11 +6,19 @@
 /*   By: lfabbro <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/09 15:43:35 by lfabbro           #+#    #+#             */
-/*   Updated: 2016/11/09 16:15:02 by lfabbro          ###   ########.fr       */
+/*   Updated: 2016/11/10 18:59:08 by lfabbro          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "filler.h"
+
+void	ft_skip_line(void)
+{
+	char	*line;
+
+	get_next_line(0, &line);
+	free(line);
+}
 
 int		ft_is_inmap(t_point m, t_point pp, t_point c)
 {
