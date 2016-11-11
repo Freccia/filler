@@ -6,7 +6,7 @@
 #    By: lfabbro <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/04/07 18:07:52 by lfabbro           #+#    #+#              #
-#    Updated: 2016/11/10 17:26:45 by lfabbro          ###   ########.fr        #
+#    Updated: 2016/11/11 17:39:30 by lfabbro          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ LIB_NAMES = ft
 SRC_PATH = ./srcs/
 OBJ_PATH = ./objs/
 INC_PATH = ./includes/ ./libft/includes/ ./SDL2/include
-LIB_PATH = ./libft/ 
+LIB_PATH = ./libft/
 
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
@@ -56,10 +56,16 @@ sdl:
 	@echo "\x1b[44m\x1b[32mMaking SDL2\x1b[0m\x1b[0m"
 	./scripts/build_sdl.sh
 
+sdlclean:
+	@echo "\x1b[44m\x1b[31mRemoving SDL2\x1b[0m\x1b[0m"
+	@/bin/rm -rfv libsdl
+
 clean : libclean
+	@echo "\x1b[44m\x1b[31mRemoving $(NAME) objects\x1b[0m\x1b[0m"
 	@/bin/rm -fv $(OBJ)
 
-fclean : clean #libfclean clean
+fclean : libfclean clean
+	@echo "\x1b[44m\x1b[31mRemoving $(NAME)\x1b[0m\x1b[0m"
 	@/bin/rm -fv $(NAME)
 
 libre :
