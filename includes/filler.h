@@ -6,7 +6,7 @@
 /*   By: lfabbro <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/27 15:44:32 by lfabbro           #+#    #+#             */
-/*   Updated: 2016/11/10 20:03:15 by lfabbro          ###   ########.fr       */
+/*   Updated: 2016/11/11 17:09:52 by lfabbro          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,8 @@ typedef struct		s_env
 	int				np;
 }					t_env;
 
+int					ft_iswall(t_env *e, char map[e->m.y][e->m.x], t_point p, \
+		t_point c);
 void				ft_skip_line(void);
 void				ft_set_point(t_point *p, int y, int x);
 void				ft_get_size(t_point *p, char *line);

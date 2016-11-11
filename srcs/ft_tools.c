@@ -6,7 +6,7 @@
 /*   By: lfabbro <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/09 15:43:35 by lfabbro           #+#    #+#             */
-/*   Updated: 2016/11/10 18:59:08 by lfabbro          ###   ########.fr       */
+/*   Updated: 2016/11/11 17:13:51 by lfabbro          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,15 +18,6 @@ void	ft_skip_line(void)
 
 	get_next_line(0, &line);
 	free(line);
-}
-
-int		ft_is_inmap(t_point m, t_point pp, t_point c)
-{
-	pp.y = pp.y + c.y;
-	pp.x = pp.x + c.x;
-	if ((pp.x >= 0 && pp.x < m.x) && (pp.y >= 0 && pp.y < m.y))
-		return (1);
-	return (0);
 }
 
 void	ft_print_best(t_point best)
@@ -41,6 +32,19 @@ void	ft_set_point(t_point *o, int y, int x)
 {
 	o->y = y;
 	o->x = x;
+}
+
+int		ft_iswall(t_env *e, char map[e->m.y][e->m.x], t_point p, t_point c)
+{
+	int		y;
+	int		x;
+
+	y = p.y + c.y;
+	x = p.x + c.x;
+	if (map[y][x] != '.' && map[y][x] != 'O' && map[y][x] != 'o' &&
+		map[y][x] != 'X' && map[y][x] != 'x')
+		return (1);
+	return (0);
 }
 
 void	ft_get_size(t_point *what, char *line)

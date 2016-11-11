@@ -6,13 +6,13 @@
 /*   By: lfabbro <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/10 17:26:32 by lfabbro           #+#    #+#             */
-/*   Updated: 2016/11/10 18:51:33 by lfabbro          ###   ########.fr       */
+/*   Updated: 2016/11/11 17:15:24 by lfabbro          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "filler.h"
 
-void		sdl_draw_grid(t_env *e, t_sdl *sdl)
+void			sdl_draw_grid(t_env *e, t_sdl *sdl)
 {
 	int		x;
 	int		y;
@@ -32,7 +32,7 @@ void		sdl_draw_grid(t_env *e, t_sdl *sdl)
 	SDL_RenderPresent(sdl->rend);
 }
 
-void		sdl_set_rect(SDL_Rect *rect, int x, int y)
+static void		sdl_set_rect(SDL_Rect *rect, int x, int y)
 {
 	rect->w = GRID - 2;
 	rect->h = GRID - 2;
@@ -40,25 +40,35 @@ void		sdl_set_rect(SDL_Rect *rect, int x, int y)
 	rect->y = y * GRID + 1;
 }
 
-void		sdl_update_grid(t_env *e, t_sdl *sdl, char map[e->m.y][e->m.x])
+static void		sdl_set_color(t_env *e, t_sdl *sdl, char map[e->m.y][e->m.x],
+		t_point p)
 {
-	int			x;
-	int			y;
+	t_point		null;
+
+	ft_set_point(&null, 0, 0);
+	if (ft_iswall(e, map, p, null))
+		SDL_SetRenderDrawColor(sdl->rend, 0xFF, 0xFF, 0xFF, 255);
+	else if (map[p.y][p.x] == e->player || map[p.y][p.x] == e->player + 32)
+		SDL_SetRenderDrawColor(sdl->rend, 20, 200, 200, 255);
+	else if (map[p.y][p.x] == e->adv || map[p.y][p.x] == e->adv + 32)
+		SDL_SetRenderDrawColor(sdl->rend, 200, 20, 200, 255);
+}
+
+void			sdl_update_grid(t_env *e, t_sdl *sdl, char map[e->m.y][e->m.x])
+{
+	t_point		p;
 	SDL_Rect	rect;
 
-	y = -1;
-	while (++y < e->m.y)
+	p.y = -1;
+	while (++p.y < e->m.y)
 	{
-		x = -1;
-		while (++x < e->m.x)
+		p.x = -1;
+		while (++p.x < e->m.x)
 		{
-			if (map[y][x] != '.')
+			if (map[p.y][p.x] != '.')
 			{
-				if (map[y][x] == e->player || map[y][x] == e->player + 32)
-					SDL_SetRenderDrawColor(sdl->rend, 20, 200, 200, 255);
-				if (map[y][x] == e->adv || map[y][x] == e->adv + 32)
-					SDL_SetRenderDrawColor(sdl->rend, 200, 20, 200, 255);
-				sdl_set_rect(&rect, x, y);
+				sdl_set_color(e, sdl, map, p);
+				sdl_set_rect(&rect, p.x, p.y);
 				SDL_RenderDrawRect(sdl->rend, &rect);
 			}
 		}

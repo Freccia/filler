@@ -6,7 +6,7 @@
 /*   By: lfabbro <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/10 17:23:20 by lfabbro           #+#    #+#             */
-/*   Updated: 2016/11/10 20:03:13 by lfabbro          ###   ########.fr       */
+/*   Updated: 2016/11/11 17:14:09 by lfabbro          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ int				sdl_init(t_sdl *sdl)
 		return (sdl_err());
 	sdl->win = SDL_CreateWindow("Filler",
 			SDL_WINDOWPOS_CENTERED / 3, SDL_WINDOWPOS_CENTERED / 4,
-			640, 480, SDL_WINDOW_RESIZABLE);
+			640, 480, SDL_WINDOW_SHOWN);
 	if (sdl->win == NULL)
 		return (sdl_err());
 	sdl->rend = SDL_CreateRenderer(sdl->win, -1, SDL_RENDERER_SOFTWARE);

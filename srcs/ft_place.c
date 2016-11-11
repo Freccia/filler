@@ -6,7 +6,7 @@
 /*   By: lfabbro <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/09 15:49:57 by lfabbro           #+#    #+#             */
-/*   Updated: 2016/11/10 17:01:57 by lfabbro          ###   ########.fr       */
+/*   Updated: 2016/11/11 17:14:55 by lfabbro          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ static int	ft_can_fit(t_env *e, char map[e->m.y][e->m.x],
 		{
 			if (pic[pp.y][pp.x] == '*')
 			{
-				if (ft_is_inmap(e->m, pp, c) &&
+				if (ft_is_inmap(e->m, pp, c) && !ft_iswall(e, map, pp, c) &&
 						map[pp.y + c.y][pp.x + c.x] != e->adv &&
 						map[pp.y + c.y][pp.x + c.x] != (e->adv + 32))
 				{
