@@ -12,26 +12,6 @@
 
 #include "filler.h"
 
-static void		ft_get_algo(t_env *e, char map[e->m.y][e->m.x])
-{
-	int			y;
-	int			x;
-
-	y = -1;
-	while (++y < e->m.y)
-	{
-		x = -1;
-		while (++x < e->m.x)
-		{
-			if (map[y][x] != '.')
-			{
-				e->algo = (map[y][x] == e->player) ? 1 : 2;
-				return ;
-			}
-		}
-	}
-}
-
 static void		ft_get_piece(t_env *e, char map[e->m.y][e->m.x])
 {
 	char		pic[e->p.y][e->p.x];
@@ -51,8 +31,6 @@ static void		ft_get_piece(t_env *e, char map[e->m.y][e->m.x])
 		}
 		free(line);
 	}
-	if (!e->algo)
-		ft_get_algo(e, map);
 	ft_place(e, map, pic);
 }
 

@@ -18,7 +18,7 @@ LIB_NAMES = ft
 
 SRC_PATH = ./srcs/
 OBJ_PATH = ./objs/
-INC_PATH = ./includes/ ./libft/includes
+INC_PATH = ./includes ./libft/includes ./libft/libft
 LIB_PATH = ./libft/
 
 CC = gcc
@@ -46,7 +46,7 @@ all:
 	@make $(NAME)
 
 $(NAME):
-	$(CC) $(CFLAGS) $(INC) $(LIB_LINK) $(LIB) $(SRC) -o $(NAME)
+	$(CC) $(CFLAGS) $(INC) $(SRC) -o $(NAME) $(LIB_LINK) $(LIB)
 
 clean : libclean
 	@/bin/rm -fv $(OBJ)
