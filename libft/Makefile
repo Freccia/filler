@@ -78,7 +78,7 @@ all :
 	@make $(NAME)
 
 $(NAME): 
-	@echo $(BLUE) "Making libft" $(ENDC)
+	@echo -e $(BLUE) "Making libft" $(ENDC)
 	@make $(OBJS_PRINTF)
 	@make $(OBJS_LIBFT)
 	@ar -rcs $(NAME) $(OBJS_PRINTF) $(OBJS_LIBFT)
@@ -94,7 +94,7 @@ $(OBJ_PATH1)%.o: $(SRC_LIBFT_PATH)%.c
 
 
 clean :
-	@echo $(RED) "Removing libft objs" $(ENDC)
+	@echo -e $(RED) "Removing libft objs" $(ENDC)
 	@/bin/rm -f $(OBJS)
 	@/bin/rm -rf $(OBJ_PATH)
 

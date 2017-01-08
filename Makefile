@@ -42,7 +42,7 @@ LIB = $(addprefix -l,$(LIB_NAMES))
 ## RULES ##
 all:
 	@make -C $(LIB_PATH)
-	@echo "\x1b[44m\x1b[32mMaking $(NAME)\x1b[0m\x1b[0m"
+	@echo -e "\x1b[44m\x1b[32mMaking $(NAME)\x1b[0m\x1b[0m"
 	@make $(NAME)
 
 $(NAME):
