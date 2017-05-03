@@ -6,7 +6,7 @@
 /*   By: lfabbro <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/28 19:09:45 by lfabbro           #+#    #+#             */
-/*   Updated: 2016/09/28 10:40:50 by lfabbro          ###   ########.fr       */
+/*   Updated: 2017/03/02 16:25:24 by lfabbro          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,26 @@
 **      Outputs the integer n to the file descriptor fd
 */
 
-void	ft_putnbr_fd(int n, int fd)
+static int	ft_nbrlen(int n)
+{
+	int		l;
+
+	l = 0;
+	while (n)
+	{
+		n /= 10;
+		++l;
+	}
+	return (l);
+}
+
+int		ft_putnbr_fd(int n, int fd)
 {
 	unsigned int	nb;
+	int				l;
 
 	nb = n;
+	l = ft_nbrlen(n);
 	if (n < 0)
 	{
 		ft_putchar_fd('-', fd);
@@ -34,4 +49,5 @@ void	ft_putnbr_fd(int n, int fd)
 	}
 	else
 		ft_putchar_fd(nb + '0', fd);
+	return (l);
 }

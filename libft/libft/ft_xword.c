@@ -1,29 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strndup.c                                       :+:      :+:    :+:   */
+/*   ft_xword.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lfabbro <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/12/03 16:36:57 by lfabbro           #+#    #+#             */
-/*   Updated: 2015/12/03 16:40:14 by lfabbro          ###   ########.fr       */
+/*   Created: 2016/08/21 13:22:06 by lfabbro           #+#    #+#             */
+/*   Updated: 2016/11/17 22:23:00 by lfabbro          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strndup(const char *src, size_t n)
+static int		ft_xword_locate(int x, char *str, char div)
 {
-	size_t	i;
-	size_t	slen;
-	char	*dup;
+	int			n;
+	int			i;
+
+	n = 1;
+	i = -1;
+	while (str[++i] && n < x)
+		if (str[i] == div)
+			++n;
+	if (n != x)
+		return (-1);
+	return (i);
+}
+
+char			*ft_xword(char *str, int x, char div)
+{
+	int			i;
+	int			j;
+	char		*word;
 
 	i = -1;
-	slen = ft_strlen(src);
-	if ((dup = ft_strnew(n)) == NULL)
+	word = NULL;
+	if ((i = ft_xword_locate(x, str, div)) < 0)
 		return (NULL);
-	while (++i < n && i < slen)
-		dup[i] = src[i];
-	dup[i] = '\0';
-	return (dup);
+	j = i;
+	while (str[j] && str[j] != div)
+		++j;
+	word = ft_strndup(&str[i], ft_abs(j - i));
+	return (word);
 }

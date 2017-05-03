@@ -1,27 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_tabnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lfabbro <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/25 16:39:02 by lfabbro           #+#    #+#             */
-/*   Updated: 2016/11/23 20:10:11 by lfabbro          ###   ########.fr       */
+/*   Created: 2016/11/23 16:45:41 by lfabbro           #+#    #+#             */
+/*   Updated: 2016/11/25 18:26:47 by lfabbro          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strchr(const char *s, int c)
+#include "libft.h"
+#include <stdlib.h>
+
+char		**ft_tabnew(size_t size)
 {
-	if (s)
-	{
-		while (*s)
-		{
-			if (*s == ((char)c))
-				return (((char *)s));
-			s++;
-		}
-		if (c == '\0')
-			return (((char *)s));
-	}
-	return (0);
+	char	**new;
+	size_t	i;
+
+	i = -1;
+	if (size == 0 || (new = malloc(sizeof(new) * (size + 1))) == NULL)
+		return (NULL);
+	while (++i <= size)
+		new[i] = NULL;
+	return (new);
 }

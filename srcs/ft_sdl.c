@@ -42,8 +42,9 @@ int				sdl_init(t_sdl *sdl)
 {
 	if (SDL_Init(SDL_INIT_VIDEO) < 0)
 		return (sdl_err());
-	sdl->win = SDL_CreateWindow("Filler",
-			SDL_WINDOWPOS_CENTERED / 3, SDL_WINDOWPOS_CENTERED / 4,
+	sdl->win = SDL_CreateWindow("Fillerrrrr",
+			//SDL_WINDOWPOS_CENTERED / 3, SDL_WINDOWPOS_CENTERED / 4,
+			10, 10,
 			640, 480, SDL_WINDOW_SHOWN);
 	if (sdl->win == NULL)
 		return (sdl_err());

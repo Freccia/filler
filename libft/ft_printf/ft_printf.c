@@ -42,13 +42,15 @@ static void		ft_print(t_struct *st, int ret)
 int				ft_printf(const char *format, ...)
 {
 	t_struct	*st;
+	int			pc;
 
-	if ((st = (t_struct*)malloc(sizeof(t_struct))) == NULL)
+	if ((st = malloc(sizeof(t_struct))) == NULL)
 		return (0);
 	va_start(st->args, format);
 	set_init_st(st, format);
 	ft_print(st, 0);
 	va_end(st->args);
+	pc = st->pc;
 	free(st);
-	return (st->pc);
+	return (pc);
 }
