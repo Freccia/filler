@@ -6,7 +6,7 @@
 #    By: lfabbro <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/04/07 18:07:52 by lfabbro           #+#    #+#              #
-#    Updated: 2016/11/11 17:39:30 by lfabbro          ###   ########.fr        #
+#    Updated: 2017/05/18 17:56:50 by lfabbro          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ LIB_NAMES = ft
 
 SRC_PATH = ./srcs/
 OBJ_PATH = ./objs/
-INC_PATH = ./includes/ ./libft/includes/ ./SDL2/include
+INC_PATH = ./includes/ ./libft/libft ./libft/includes/ ./SDL2/include
 LIB_PATH = ./libft/
 
 CC = gcc
